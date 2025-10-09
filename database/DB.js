@@ -7,6 +7,7 @@ const DB = mysql.createPool({
     database: process.env.DB_NAME,
     user: process.env.DB_USER,
     password: process.env.PASS,
+    charset:'utf8mb4'
 })
 
 module.exports = DB
