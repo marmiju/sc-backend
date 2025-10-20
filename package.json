@@ -9,7 +9,7 @@
     "jsonwebtoken": "^9.0.2",
     "multer": "^2.0.2",
     "multer-storage-cloudinary": "^4.0.0",
-    "mysql2": "^3.15.1",
+    "mysql2": "^3.15.2",
     "nodemon": "^3.1.10",
     "sharp": "^0.34.4"
   },
@@ -23,5 +23,13 @@
   },
   "keywords": [],
   "author": "MAR miju",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marmiju/sc-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marmiju/sc-backend/issues"
+  },
+  "homepage": "https://github.com/marmiju/sc-backend#readme"
 }
