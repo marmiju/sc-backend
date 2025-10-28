@@ -11,8 +11,7 @@ const getUser= async (req,res)=>{
         if(rows.length === 0){
             return res.status(404).json({success:false, message: "User not found"});
         }
-        const {password, ...user} = rows[0];
-        res.status(200).json({success:true, user});
+        res.status(200).json({success:true, rows});
     }catch(error){
         console.error('Error fetching user:', error);
         return res.status(500).json({ success: false, error: "Internal server error"});

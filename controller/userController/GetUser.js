@@ -32,7 +32,6 @@ const getUserByRole = async (req, res) => {
 };
 
 
-
 module.exports = {
     GetAllUser,
     getUserByRole

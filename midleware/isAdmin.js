@@ -26,7 +26,6 @@ const isAdmin_editor = (req, res, next) => {
         // check token empty or not
         if (!token)  return res.status(401).json({ success: false, message: "No token provided" });
         const user = jwt.verify(token, process.env.JWT_SECRET);
-        console.log(user.role);
         
         if(user.role !== 'admin' && user.role !== 'editor' ) return res.status(403).json({ success: false,  message: "Access denied.You Need to be Admin or Editor."  });
         req.user = user;

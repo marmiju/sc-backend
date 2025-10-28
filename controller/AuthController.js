@@ -12,6 +12,8 @@ const jwt = require('jsonwebtoken');
 
 const CreateUser = async (req, res) => {
     const { email, name, password, phone, religion, address, birthDate, bloodgrp, education, joinDate, roleId, designation } = req.body;
+    const file = req.file;
+    console.log('Received file in CreateUser:', file);
     let profile_picture = null;
     try {
 
@@ -78,14 +80,16 @@ const SignIn = async (req, res) => {
         const token = jwt.sign(
             {
                 id: user.id,
+                name:user.name,
                 email: user.email,
-                role: user.role
+                role: user.role,
+                profile_picture: user.profile_picture
             },
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         );
         const { password : pwd, ...data } = user;
-        return res.status(200).json({ success: true,message: "User signed in successfully", data,token });
+        return res.status(200).json({ success: true,message: "User signed in successfully",data,token });
     } catch (error) {
         console.error('Error signing in user:', error);
         res.status(500).json({ success: false, error: "Internal server error" });
