@@ -7,6 +7,7 @@ const { isAuthentication } = require('../midleware/isAuthentication');
 const { GetAllUser, getUserByRole } = require('../controller/userController/GetUser');
 const getUser = require('../controller/userController/getStudent');
 const { UpdateUser } = require('../controller/userController/UpdateUser');
+const deleteUser = require('../controller/userController/deletUser');
 
 
 const router = express.Router();
@@ -27,5 +28,6 @@ router.get('/getUsers',GetAllUser )
 router.get('/getUsers/:roleId', getUserByRole) // get User By Role like Teacher Stuff and more
 router.get('/getUser/:id', getUser);
 router.put('/updateUser/:id', isAuthentication, isAdmin_editor, upload.single('profile_picture'), UpdateUser);
+router.delete('/user/:id', isAdmin_editor, deleteUser);
 
 module.exports = router;
