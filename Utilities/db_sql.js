@@ -19,7 +19,7 @@ const sql = {
     getAllUSer: `select u.*, r.name as role, u.profile_picture from  ${table.users} as u JOIN ${table.rols} as r on u.roleId = r.id ORDER BY u.id DESC`,
     getByRole: `select u.*, r.name as role from User as u JOIN Role as r on u.roleId = r.id where u.roleId =?`,
     getUser : `select *, r.name as role from User as u join Role as r on u.roleId = r.id where u.id = ?`,
-    deletuser:`DELETE FROM User WHERE id = 5`
+    deletuser:`DELETE FROM User WHERE id = ?`
     
 }
 
